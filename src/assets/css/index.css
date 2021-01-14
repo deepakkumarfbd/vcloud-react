@@ -1,0 +1,315 @@
+@import './common.css';
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    display: flex;
+}
+.logo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    width: 257px;
+    border-right: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    align-items: center;
+    padding: 0 20px;
+    transition: width 0.25s ease, background 0.25s ease;
+}
+.logo-wrapper a {
+    color: #27367f;
+    font-size: 24px;
+    font-weight: bold;
+}
+.mobile-logo {
+    display: none;
+}
+.sort-icon {
+    cursor: pointer;
+}
+.menu-wrapper {
+    width: calc(100% - 257px);
+    height: 60px;
+    padding: 0 16px;
+    border-bottom: 1px solid #e3e3e3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: width 0.25s ease;
+}
+.profile-wrapper {
+    position: relative;
+    margin: 0 20px;
+}
+.profile {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+.profile img {
+    border-radius: 100%;
+    width: 32px;
+}
+.profile span {
+    font-weight: 500;
+    font-size: 14px;
+    color: #4a4a4a;
+    padding-left: 8px;
+}
+.profile svg {
+    margin-left: 8px;
+}
+.profile-dropdown {
+    position: absolute;
+    top: 46px;
+    right: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    padding: 8px 0;
+    display: none;
+}
+.profile-dropdown.active {
+    display: block;
+}
+.profile-dropdown div {
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    color: #212529;
+    line-height: 26px;
+    cursor: pointer;
+}
+.profile-dropdown div svg {
+    margin-right: 8px;
+}
+.profile-dropdown div:hover {
+    background-color: #eaeaf1;
+}
+
+.burger-menu {
+    align-self: center;
+    margin-left: 20px;
+    cursor: pointer;
+    color: inherit;
+    display: none;
+}
+
+
+
+
+
+
+.page-body-wrapper {
+    display: flex;
+    height: 100vh;
+    padding-top: 60px;
+}
+.sidebar {
+    background-color: #fff;
+    width: 257px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e3e3e3;
+    transition: width 0.25s ease, background 0.25s ease;
+}
+.sidebar.active {
+    right: 0;
+}
+.sidebar ul li {
+    border-bottom: 1px solid #f3f3f3;
+}
+.sidebar ul li a {
+    color: #4d83ff;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+}
+.sidebar ul li a svg {
+    margin-right: 18px;
+}
+.main-panel {
+    background-color: #f3f3f3;
+    width: calc(100% - 257px);
+    display: flex;
+    padding: 30px 16px;
+}
+
+.login {
+    display: flex;
+    background-color: #f3f3f3;
+    height: 100vh;
+}
+.login-form-wrapper,
+.login-bg {
+    width: 50%;
+    display: flex;
+}
+.login-form-wrapper {
+    align-items: center;
+}
+.login-form {
+    width: 55%;
+    margin: 0 auto;
+}
+.login-form h1 {
+    color: #27367f;
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+.login-form h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.login-form p {
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 24px;
+}
+.input-group {
+    margin-bottom: 24px;
+}
+.input-group .input {
+    border: 1px solid #686868;
+    display: flex;
+    align-items: center;
+}
+.input-group label {
+    font-size: 13px;
+    margin-bottom: 8px;
+    display: block;
+}
+.input-group span {
+    display: block;
+    padding: 13px 12px;
+}
+.input-group input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 15px 30px;
+    color: #495057;
+    font-size: 14px;
+}
+.login-btn {
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    color: #fff;
+    padding: 16px 48px;
+    border-radius: 3px;
+    background-color: #4d83ff;
+    border: none;
+    outline: none;
+    margin-top: 32px;
+    box-shadow: 0 2px 2px 0 rgba(77, 131, 255, 0.14), 0 3px 1px -2px rgba(77, 131, 255, 0.2), 0 1px 5px 0 rgba(77, 131, 255, 0.12);    
+}
+.login-btn:hover {
+    background-color: #2768ff;
+}
+.error {
+    color: #ff4747;
+}
+.login-bg {
+    background-image: url(../img/login-bg.jpg);
+    background-size: cover;
+}
+
+@media (min-width: 992px) {
+    .sidebar-icon-only .logo-wrapper,
+    .sidebar-icon-only .sidebar {
+        width: 70px;
+    }
+    .sidebar-icon-only .menu-wrapper,
+    .sidebar-icon-only .main-panel {
+        width: calc(100% - 70px);
+    }
+    .sidebar-icon-only .desktop-logo {
+        display: none;
+    }
+    .sidebar-icon-only .sidebar ul li a {
+        padding-left: 8px;
+        padding-right: 8px;
+        justify-content: center;
+        position: relative;
+    }
+    .sidebar-icon-only .sidebar ul li a svg {
+        margin-right: 0;
+    }
+    .sidebar-icon-only .sidebar ul li a span {
+        display: none;
+        position: absolute;
+        transform: translateX(100%);
+        background: #fff;
+        right: -1px;
+        padding: 12px 20px;
+        border-radius: 0 5px 5px 0;
+        bottom: 0;
+        width: 190px;
+        box-shadow: 4px 0px 7px 0px rgba(182, 185, 189, 0.25);
+    
+    }
+    .sidebar-icon-only .sidebar ul li a:hover span {
+        display: block;
+    }
+}
+
+@media (max-width: 991px) {
+    .logo-wrapper {
+        width: 55px;
+    }
+    .mobile-logo {
+        display: block;
+    }
+    .desktop-logo {
+        display: none;
+    }
+    .sort-icon {
+        display: none;
+    }
+    .burger-menu {
+        display: block;
+    }
+    .profile-wrapper {
+        position: static;
+    }
+    .profile span {
+        display: none;
+    }
+    .profile-dropdown {
+        width: calc(100% - 40px);
+        left: 20px;
+        right: 20px;
+        top: 60px;
+    }
+    .sidebar {
+        position: fixed;
+        max-height: calc(100vh - 60px);
+        top: 60px;
+        bottom: 0;
+        overflow: auto;
+        right: -257px;
+        transition: all 0.25s ease-out;
+    }
+    .main-panel {
+        width: 100%;
+    }
+    .menu-wrapper {
+        width: calc(100% - 55px);
+    }
+
+    .login {
+        flex-wrap: wrap;
+    }
+    .login-form-wrapper,
+      .login-bg {
+        width: 100%;
+      }
+}
