@@ -12,11 +12,24 @@ function App() {
           exact
           path="/"
           render={() =>
-            JSON.parse(localStorage.getItem('auth')) ? <Main /> : <Redirect to="/login" />
+            JSON.parse(localStorage.getItem("auth")) ? (
+              <Main />
+            ) : (
+              <Redirect to="/login" />
+            )
           }
         />
-        {/* <Route path="/" component={Main} /> */}
-        <Route path="/login" component={Login} />
+        <Route
+          exact
+          path="/login"
+          render={() =>
+            JSON.parse(localStorage.getItem("auth")) ? (
+              <Redirect to="/" />
+            ) : (
+              <Login />
+            )
+          }
+        />
       </Switch>
     </BrowserRouter>
   );
