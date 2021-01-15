@@ -8,7 +8,7 @@ function Main() {
     const [menu, setMenu] = useState(false);
     return (
       <div className="main">
-          <Header setMenu={setMenu}  menu={menu} />
+          <Header setMenu={setMenu} menu={menu} />
           <div className="page-body-wrapper">
             <Sidebar menu={menu} />
             <MainPanel />
